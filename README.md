@@ -1,5 +1,5 @@
 ON pwa studio provare le diverse funzioni del carrello.
-in home vengono le diverse funzioni e cosa producono le azioni :
+in home vengono descritte le diverse funzioni e cosa producono le azioni :
 1 createcart().
 2 additemtocart
 3 getcartdetails
