@@ -7,4 +7,5 @@ in home vengono descritte le diverse funzioni e cosa producono le azioni :
 5 removecart
 6 getcartid
 7 writeimagetocache
+menu iniziale in home page [](url)https://github.com/Antonioele/testcart/foto/menu
 
