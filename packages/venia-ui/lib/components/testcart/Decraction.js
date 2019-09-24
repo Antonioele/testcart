@@ -1,6 +1,7 @@
 import React , {Fragment,useEffect,useState,useCallback,useReducer} from 'react';
 
  import Createcart from './azioni/Createcart';
+ import Additemtocart from './azioni/Additemtocart';
 import Defaultclass1 from './Decraction.css';
 
 
@@ -13,7 +14,7 @@ switch (evento) {
     case 'Createcart':
     return <Createcart /> ;
     case 'additemtoCart':
-      return "aa";
+      return <Additemtocart />;
     case 'decrement':
       return "ciao";
     default:
