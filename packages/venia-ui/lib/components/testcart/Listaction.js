@@ -1,16 +1,24 @@
-import React , {Fragment,useState} from 'react';
-
+import React , {Fragment,useState,useCallback} from 'react';
+import Decraction1 from './Decraction';
 import defaultClasses from './Listaction.css';
 
 const Listaction =props=>{
- const [evento,setEvento]=useState("CreateCart");
-    console.log (`default class ${defaultClasses}`);
-    const Vistaevento=() =>{alert};
-    const ls=["Createcart","additemtoCart","getCartdetails",
-        "togglecart","removecart","getcartid","clearcartid","writeimagetocache"];
+ const [value,setValue]=useState('pluto');
+    
+  
+   const handleChange = useCallback(e =>
+    {
+    setValue(e);
+  console.log(`valore ${e}`);
+  }
+      ,[]);
+  
+    const ls=['Createcart','additemtoCart','getCartdetails',
+        'togglecart','removecart','getcartid','clearcartid','writeimagetocache'];
         const listItems = ls.map((number,index) =>
         <li key={index}  >
-          <button onClick={Vistaevento}   className={defaultClasses.target}>{number.toUpperCase()}</button>
+          <button onClick={() => handleChange(number)}   
+          className={defaultClasses.target}>{number.toUpperCase()}</button>
           </li>
       );
         return(
@@ -20,7 +28,10 @@ const Listaction =props=>{
 <ul>
 {listItems}
 </ul>
-<div> <h1>plutooooooooooooooooooooooooo</h1></div>
+<div className= {defaultClasses.pluto}> 
+
+<Decraction1 value={value} />
+</div>
 </div>
 
 </>
