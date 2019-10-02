@@ -2,6 +2,7 @@ import React , {Fragment,useEffect,useState,useCallback,useReducer} from 'react'
 import defaultClasses from './Createcart.css';
 import BrowserPersistence from '../../../../../peregrine/lib/util/simplePersistence';
 import { Magento2 }       from '../../../../../peregrine/lib/RestApi';
+import { async } from 'q';
 const {request} =Magento2;
 
 const Storage = new BrowserPersistence();
@@ -32,10 +33,26 @@ const handlerequest_guest= () => {
     method: 'POST'
 }).then(res => set_cartid_guest(res));
 
+async function displayGuestCartItems() {
+    const cartResponse = await request('/rest/V1/guest-carts',
+        {
+            method: 'POST'
+        }
+    );
+    const cart = await cartResponse;
+    console.log(`carta item ${cart}`);
+}
+displayGuestCartItems(cartid_guest);
+
+
+
 }
 
 const handlerequest_customer =() => {
     request('rest/V1/carts/mine',{method:'POST'}).then(res=>set_cartid_customer(res));
+
+
+
 
 }
 

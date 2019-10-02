@@ -98,6 +98,7 @@ export const addItemToCart = (payload = {}) => {
                 method: 'POST',
                 body: JSON.stringify({ cartItem })
             });
+console.log(`response....${response}`);
 
             // 2019-02-07  Moved these dispatches to the success clause of
             // addItemToCart. The cart should only open on success.
